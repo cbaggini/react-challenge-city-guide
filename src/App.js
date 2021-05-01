@@ -45,6 +45,9 @@ function App() {
           </option>
         ))}
       </select>
+      {category && !city && (
+        <h3 className="alert alert-danger">Please select a city as well!</h3>
+      )}
       <div>
         {categories.map((el) => (
           <button
