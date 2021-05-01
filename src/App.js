@@ -32,13 +32,17 @@ function App() {
     e.target.className = "btn btn-primary";
   };
 
+  const capitalize = (str) => str[0].toUpperCase() + str.substring(1);
+
   return (
     <div className="App">
       <h1>City Mini Guide</h1>
       <select onChange={(e) => setCity(e.target.value)}>
         <option value="">Select a city</option>
         {cities.map((el) => (
-          <option key={el}>{el}</option>
+          <option key={el} value={el}>
+            {capitalize(el)}
+          </option>
         ))}
       </select>
       <div>
@@ -49,7 +53,7 @@ function App() {
             className="btn btn-secondary"
             onClick={changeSelection}
           >
-            {el}
+            {capitalize(el)}
           </button>
         ))}
       </div>
